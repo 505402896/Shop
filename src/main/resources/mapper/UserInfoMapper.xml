@@ -4,4 +4,10 @@
   <select id="login" resultType="com.example.shop.entity.UserInfo">
     SELECT * FROM `userInfo` WHERE `username` = #{username} AND `password` = #{password}
   </select>
+  <insert id="sign" parameterType="map">
+    INSERT INTO userInfo VALUES (NULL ,#{username}, #{password})
+  </insert>
+  <select id="queryUserByUsername" resultType="com.example.shop.entity.UserInfo" parameterType="java.lang.String">
+    SELECT * FROM userInfo WHERE username = #{username}
+  </select>
 </mapper>

@@ -1,6 +1,8 @@
 package com.example.shop.entity;
 
-public class UserInfo {
+import java.io.Serializable;
+
+public class UserInfo implements Serializable {
   private int uid;
   private String username;
   private String password;

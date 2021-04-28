@@ -2,11 +2,9 @@ package com.example.shop.controller;
 
 import com.example.shop.service.UserInfoService;
 import com.example.shop.util.Result;
+import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -19,6 +17,11 @@ public class UserInfoController {
   @RequestMapping(value = "/login",method = RequestMethod.GET)
   public Result login(String username,String password) {
     return userInfoService.login(username, password);
+  }
+
+  @RequestMapping(value = "/sign",method = RequestMethod.PUT)
+  public Result sign(@RequestBody JSONObject jsonObject) {
+    return userInfoService.sign(jsonObject);
   }
 
 }
