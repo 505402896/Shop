@@ -10,4 +10,5 @@ import java.util.List;
 @Repository
 public interface GoodsMapper {
   List<Goods> getAllGoods();  // 获取所有未售商品
+  Goods getGoodsById(int gid);
 }

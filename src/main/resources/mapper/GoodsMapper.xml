@@ -4,4 +4,7 @@
   <select id="getAllGoods" resultType="com.example.shop.entity.Goods">
     SELECT * FROM goods WHERE status = 1
   </select>
+  <select id="getGoodsById" resultType="com.example.shop.entity.Goods" parameterType="int">
+    SELECT * FROM goods WHERE gid = #{gid}
+  </select>
 </mapper>

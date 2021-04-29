@@ -10,4 +10,7 @@
   <select id="queryUserByUsername" resultType="com.example.shop.entity.UserInfo" parameterType="java.lang.String">
     SELECT * FROM userInfo WHERE username = #{username}
   </select>
+  <update id="updateUserInfo" parameterType="map">
+    UPDATE userInfo SET name = #{name}, dept = #{dept}, phone = #{phone}, qqNumber = #{qqNumber}, address = #{address} WHERE uid = #{uid}
+  </update>
 </mapper>

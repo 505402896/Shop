@@ -2,7 +2,8 @@ package com.example.shop.controller;
 
 import com.example.shop.service.UserInfoService;
 import com.example.shop.util.Result;
-import net.sf.json.JSONObject;
+
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,4 +25,8 @@ public class UserInfoController {
     return userInfoService.sign(jsonObject);
   }
 
+  @RequestMapping(value = "/updateUserInfo",method = RequestMethod.POST)
+  public Result updateUserInfo(@RequestBody JSONObject jsonObject) {
+    return userInfoService.updateUserInfo(jsonObject);
+  }
 }

@@ -3,10 +3,15 @@ package com.example.shop.service.Imp;
 import com.example.shop.entity.UserInfo;
 import com.example.shop.mapper.UserInfoMapper;
 import com.example.shop.service.UserInfoService;
+import com.example.shop.util.Common;
 import com.example.shop.util.Result;
-import net.sf.json.JSONObject;
+
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
 
 @Service("UserInfoService")
 public class UserInfoServiceImp implements UserInfoService {
@@ -44,6 +49,17 @@ public class UserInfoServiceImp implements UserInfoService {
       result.setMessage("用户已存在，请重新注册");
       result.setCode(0);
     }
+    return result;
+  }
+
+  @Override
+  public Result updateUserInfo(JSONObject jsonObject) {
+    Result result = new Result();
+    Map<String,Object> map = Common.JsonToMap(jsonObject);
+    UserInfo userInfo = userInfoMapper.updateUserInfo(map);
+    result.setData(userInfo);
+    result.setCode(200);
+    result.setMessage("更新成功");
     return result;
   }
 }
