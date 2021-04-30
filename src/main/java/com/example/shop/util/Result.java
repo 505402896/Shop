@@ -1,7 +1,9 @@
 package com.example.shop.util;
 
 
-public class Result {
+import java.io.Serializable;
+
+public class Result implements Serializable {
   private String message;
   private Object data;
   private int code;

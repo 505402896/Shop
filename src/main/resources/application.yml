@@ -7,6 +7,10 @@ spring:
     url: jdbc:mysql://121.196.145.100:3306/shop?characterEncoding=utf-8&useSSL=false
     username: root
     password: 970920
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 #mybatis的相关配置
 mybatis:
