@@ -34,13 +34,12 @@ public class UserInfoServiceImp implements UserInfoService {
   }
 
   @Override
-  public Result sign(JSONObject jsonObject) {
+  public Result sign(UserInfo userInfo) {
     Result result = new Result();
-    String username = jsonObject.getString("username");
-    String password = jsonObject.getString("password");
+    String username = userInfo.getUsername();
     Object oldUser = userInfoMapper.queryUserByUsername(username);
     if(oldUser == null) {
-      userInfoMapper.sign(username, password);
+      userInfoMapper.sign(userInfo);
       Object newUser = userInfoMapper.queryUserByUsername(username);
       result.setData(newUser);
       result.setCode(200);

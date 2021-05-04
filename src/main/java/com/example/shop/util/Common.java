@@ -12,7 +12,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Common {
-  public static final String imgPath = "C:\\ftp\\assets\\image\\shop";
+  public static final String imgPath = "C:\\ftp\\apache-tomcat-9.0.41\\webapps\\assets\\shop\\image";
 //  JSON转Map
   public static Map<String,Object> JsonToMap(JSONObject j){
     Map<String,Object> map = new HashMap<>();

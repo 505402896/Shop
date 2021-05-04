@@ -1,5 +1,6 @@
 package com.example.shop.controller;
 
+import com.example.shop.entity.UserInfo;
 import com.example.shop.service.UserInfoService;
 import com.example.shop.util.Result;
 
@@ -21,8 +22,8 @@ public class UserInfoController {
   }
 
   @RequestMapping(value = "/sign",method = RequestMethod.PUT)
-  public Result sign(@RequestBody JSONObject jsonObject) {
-    return userInfoService.sign(jsonObject);
+  public Result sign(@RequestBody UserInfo userInfo) {
+    return userInfoService.sign(userInfo);
   }
 
   @RequestMapping(value = "/updateUserInfo",method = RequestMethod.POST)

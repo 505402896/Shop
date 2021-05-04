@@ -8,10 +8,12 @@ public class Goods {
   private String detail;
   private String pic;
   private int status;
+  private int uid;
+  private String name;
 
   public Goods() {}
 
-  public Goods(int gid, String title, String type, int price, String detail, String pic, int status) {
+  public Goods(int gid, String title, String type, int price, String detail, String pic, int status, int uid, String name) {
     this.gid = gid;
     this.title = title;
     this.type = type;
@@ -19,6 +21,16 @@ public class Goods {
     this.detail = detail;
     this.pic = pic;
     this.status = status;
+    this.uid = uid;
+    this.name = name;
+  }
+
+  public int getUid() {
+    return uid;
+  }
+
+  public void setUid(int uid) {
+    this.uid = uid;
   }
 
   public int getGid() {
@@ -77,6 +89,14 @@ public class Goods {
     this.status = status;
   }
 
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
   @Override
   public String toString() {
     return "Goods{" +
@@ -87,6 +107,8 @@ public class Goods {
             ", detail='" + detail + '\'' +
             ", pic='" + pic + '\'' +
             ", status=" + status +
+            ", uid=" + uid +
+            ", name='" + name + '\'' +
             '}';
   }
 }

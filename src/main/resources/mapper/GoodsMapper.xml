@@ -8,6 +8,6 @@
     SELECT * FROM goods WHERE gid = #{gid}
   </select>
   <insert id="addGoods" parameterType="com.example.shop.entity.Goods">
-    INSERT INTO goods VALUES (null,#{title},#{type},#{price},#{detail},#{pic},1)
+    INSERT INTO goods VALUES (null,#{title},#{type},#{price},#{detail},#{pic},1,#{uid},#{name})
   </insert>
 </mapper>

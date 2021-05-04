@@ -29,4 +29,9 @@ public class GoodsController {
   public Result getGoodsInfo(@RequestBody Goods goods) {
     return goodsService.getGoodsInfo(goods);
   }
+
+  @RequestMapping(value = "/getGoodsById",method = RequestMethod.GET)
+  public Result getGoodsById(int gid) {
+    return goodsService.getGoodsById(gid);
+  }
 }

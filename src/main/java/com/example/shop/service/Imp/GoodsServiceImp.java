@@ -50,7 +50,16 @@ public class GoodsServiceImp implements GoodsService {
     result.setMessage("新增成功");
     result.setCode(200);
     result.setData(goods);
-    System.out.println(goods.toString());
+    return result;
+  }
+
+  @Override
+  public Result getGoodsById(int gid) {
+    Result result = new Result();
+    Goods goods = goodsMapper.getGoodsById(gid);
+    result.setCode(200);
+    result.setMessage("查询成功");
+    result.setData(goods);
     return result;
   }
 }

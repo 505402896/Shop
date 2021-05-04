@@ -9,4 +9,5 @@ public interface GoodsService {
   Result getAllGoods();
   Result getGoodImg(@RequestParam(value = "file") MultipartFile file);
   Result getGoodsInfo(Goods goods);
+  Result getGoodsById(int gid);
 }

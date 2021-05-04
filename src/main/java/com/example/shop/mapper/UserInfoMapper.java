@@ -10,7 +10,7 @@ import java.util.Map;
 @Repository
 public interface UserInfoMapper {
   UserInfo login(String username,String password);
-  void sign(String username,String password);
+  void sign(UserInfo userInfo);
   UserInfo queryUserByUsername(String username);
   UserInfo updateUserInfo(Map<String,Object> map);
 }
