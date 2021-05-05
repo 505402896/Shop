@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.shop.mapper.RecentMapper">
+  <insert id="addRecent" parameterType="com.example.shop.entity.Recent">
+    INSERT INTO recent VALUES (NULL ,#{sendId}, #{acceptId}, #{content}, NOW())
+  </insert>
+  <update id="updateRecent" parameterType="com.example.shop.entity.Recent">
+    UPDATE recent SET sendId = #{sendId}, acceptId = #{acceptId}, content = #{content}, createTime = NOW() WHERE rid = #{rid}
+  </update>
+    <select id="getRecentById" resultType="com.example.shop.entity.Recent"  parameterType="int">
+      SELECT * FROM recent WHERE (sendId = #{sendId} OR sendId = #{acceptId}) AND (acceptId = #{sendId} OR acceptId = #{acceptId})
+    </select>
+</mapper>
