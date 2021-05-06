@@ -4,7 +4,7 @@
   <insert id="addMessage" parameterType="com.example.shop.entity.Chat">
     INSERT  INTO chat VALUES (NULL ,#{content}, #{sendId}, #{acceptId}, NOW())
   </insert>
-  <select id="getMessage" parameterType="com.example.shop.entity.Chat">
+  <select id="getMessage" resultType="com.example.shop.entity.Chat" parameterType="com.example.shop.entity.Chat">
     SELECT * FROM chat WHERE (sendId = #{sendId} OR sendId = #{acceptId}) AND (acceptId = #{sendId} OR acceptId = #{acceptId})
   </select>
 </mapper>

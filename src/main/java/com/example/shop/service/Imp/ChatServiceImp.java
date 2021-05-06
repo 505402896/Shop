@@ -31,7 +31,7 @@ public class ChatServiceImp implements ChatService {
       recentMapper.addRecent(newRecent);
     } else {
 //      否则更新最近联系
-      Recent updateRecent = new Recent();
+      Recent updateRecent = recentMapper.getRecentById(chat.getSendId(), chat.getAcceptId());
       updateRecent.setSendId(chat.getSendId());
       updateRecent.setAcceptId(chat.getAcceptId());
       updateRecent.setContent(chat.getContent());
