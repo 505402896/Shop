@@ -13,4 +13,5 @@ public interface UserInfoMapper {
   void sign(UserInfo userInfo);
   UserInfo queryUserByUsername(String username);
   UserInfo updateUserInfo(Map<String,Object> map);
+  UserInfo getUserById(int uid);
 }

@@ -7,7 +7,10 @@
   <update id="updateRecent" parameterType="com.example.shop.entity.Recent">
     UPDATE recent SET sendId = #{sendId}, acceptId = #{acceptId}, content = #{content}, updateTime = NOW() WHERE rid = #{rid}
   </update>
-    <select id="getRecentById" resultType="com.example.shop.entity.Recent"  parameterType="int">
-      SELECT * FROM recent WHERE (sendId = #{sendId} OR sendId = #{acceptId}) AND (acceptId = #{sendId} OR acceptId = #{acceptId})
+  <select id="getRecentById" resultType="com.example.shop.entity.Recent"  parameterType="int">
+    SELECT * FROM recent WHERE (sendId = #{sendId} OR sendId = #{acceptId}) AND (acceptId = #{sendId} OR acceptId = #{acceptId})
     </select>
+  <select id="getRecent" resultType="com.example.shop.entity.Recent" parameterType="int">
+    SELECT * FROM recent WHERE sendId = #{uid} OR acceptId = #{uid}
+  </select>
 </mapper>
