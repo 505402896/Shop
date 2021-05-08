@@ -34,4 +34,9 @@ public class GoodsController {
   public Result getGoodsById(int gid) {
     return goodsService.getGoodsById(gid);
   }
+
+  @RequestMapping(value = "/getGoodsByType",method = RequestMethod.GET)
+  public Result getGoodsByType(int type) {
+    return goodsService.getGoodsByType(type);
+  }
 }

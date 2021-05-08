@@ -10,4 +10,7 @@
   <insert id="addGoods" parameterType="com.example.shop.entity.Goods">
     INSERT INTO goods VALUES (null,#{title},#{type},#{price},#{detail},#{pic},1,#{uid},#{name})
   </insert>
+  <select id="getGoodsByType" resultType="com.example.shop.entity.Goods" parameterType="int">
+    SELECT * FROM goods WHERE `type` = #{type} AND `status` = 1
+  </select>
 </mapper>

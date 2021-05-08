@@ -62,4 +62,14 @@ public class GoodsServiceImp implements GoodsService {
     result.setData(goods);
     return result;
   }
+
+  @Override
+  public Result getGoodsByType(int type) {
+    Result result = new Result();
+    List<Goods> list = goodsMapper.getGoodsByType(type);
+    result.setData(list);
+    result.setMessage("查询分类成功");
+    result.setCode(200);
+    return result;
+  }
 }
