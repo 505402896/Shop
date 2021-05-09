@@ -11,4 +11,6 @@ public interface GoodsService {
   Result getGoodsInfo(Goods goods);
   Result getGoodsById(int gid);
   Result getGoodsByType(int type);
+  Result getMyGoods(int uid);
+  Result delMyGoods(int gid);
 }

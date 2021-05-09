@@ -13,4 +13,13 @@
   <select id="getGoodsByType" resultType="com.example.shop.entity.Goods" parameterType="int">
     SELECT * FROM goods WHERE `type` = #{type} AND `status` = 1
   </select>
+  <select id="getMyGoods" resultType="com.example.shop.entity.Goods" parameterType="int">
+    SELECT * FROM goods WHERE uid = #{uid}
+  </select>
+  <delete id="delMyGoods" parameterType="int">
+    DELETE FROM goods WHERE gid = #{gid}
+  </delete>
+  <select id="queryImgPath" resultType="java.lang.String" parameterType="int">
+        SELECT pic FROM goods WHERE gid = #{gid}
+    </select>
 </mapper>

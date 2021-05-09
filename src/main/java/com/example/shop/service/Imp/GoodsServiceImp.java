@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.util.List;
 
 @Service("GoodsService")
@@ -70,6 +71,34 @@ public class GoodsServiceImp implements GoodsService {
     result.setData(list);
     result.setMessage("查询分类成功");
     result.setCode(200);
+    return result;
+  }
+
+  @Override
+  public Result getMyGoods(int uid) {
+    Result result = new Result();
+    List<Goods> list = goodsMapper.getMyGoods(uid);
+    result.setCode(200);
+    result.setMessage("查询我的发布成功");
+    result.setData(list);
+    return result;
+  }
+
+  @Override
+  public Result delMyGoods(int gid) {
+    Result result = new Result();
+    String name = goodsMapper.queryImgPath(gid);
+    String fileName = Common.imgPath + "\\" + name;
+    File file = new File(fileName);
+    if(file.exists()) {
+      file.delete();
+      goodsMapper.delMyGoods(gid);
+      result.setCode(200);
+      result.setMessage("删除成功");
+    }else {
+      result.setCode(0);
+      result.setMessage("文件不存在");
+    }
     return result;
   }
 }

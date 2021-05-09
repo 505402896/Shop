@@ -39,4 +39,14 @@ public class GoodsController {
   public Result getGoodsByType(int type) {
     return goodsService.getGoodsByType(type);
   }
+
+  @RequestMapping(value = "/getMyGoods",method = RequestMethod.GET)
+  public Result getMyGoods(int uid) {
+    return goodsService.getMyGoods(uid);
+  }
+
+  @RequestMapping(value = "/delMyGoods/{gid}",method = RequestMethod.DELETE)
+  public Result delMyGoods(@PathVariable("gid") int gid) {
+    return goodsService.delMyGoods(gid);
+  }
 }
