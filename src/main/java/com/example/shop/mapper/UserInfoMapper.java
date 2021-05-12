@@ -12,6 +12,7 @@ public interface UserInfoMapper {
   UserInfo login(String username,String password);
   void sign(UserInfo userInfo);
   UserInfo queryUserByUsername(String username);
-  UserInfo updateUserInfo(Map<String,Object> map);
+  void updateUserInfo(UserInfo userInfo);
   UserInfo getUserById(int uid);
+  void updatePassword(UserInfo userInfo);
 }

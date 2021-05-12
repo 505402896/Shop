@@ -52,13 +52,20 @@ public class UserInfoServiceImp implements UserInfoService {
   }
 
   @Override
-  public Result updateUserInfo(JSONObject jsonObject) {
+  public Result updateUserInfo(UserInfo userInfo) {
     Result result = new Result();
-    Map<String,Object> map = Common.JsonToMap(jsonObject);
-    UserInfo userInfo = userInfoMapper.updateUserInfo(map);
-    result.setData(userInfo);
+    userInfoMapper.updateUserInfo(userInfo);
     result.setCode(200);
     result.setMessage("更新成功");
+    return result;
+  }
+
+  @Override
+  public Result updatePassword(UserInfo userInfo) {
+    Result result = new Result();
+    userInfoMapper.updatePassword(userInfo);
+    result.setMessage("修改成功");
+    result.setCode(200);
     return result;
   }
 }

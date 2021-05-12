@@ -8,5 +8,6 @@ import org.json.JSONObject;
 public interface UserInfoService {
   Result login(String username,String password);
   Result sign(UserInfo userInfo);
-  Result updateUserInfo(JSONObject jsonObject);
+  Result updateUserInfo(UserInfo userInfo);
+  Result updatePassword(UserInfo userInfo);
 }

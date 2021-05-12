@@ -27,7 +27,12 @@ public class UserInfoController {
   }
 
   @RequestMapping(value = "/updateUserInfo",method = RequestMethod.POST)
-  public Result updateUserInfo(@RequestBody JSONObject jsonObject) {
-    return userInfoService.updateUserInfo(jsonObject);
+  public Result updateUserInfo(@RequestBody UserInfo userInfo) {
+    return userInfoService.updateUserInfo(userInfo);
+  }
+
+  @RequestMapping(value = "/updatePassword",method = RequestMethod.POST)
+  public Result updatePassword(@RequestBody UserInfo userInfo) {
+    return userInfoService.updatePassword(userInfo);
   }
 }
