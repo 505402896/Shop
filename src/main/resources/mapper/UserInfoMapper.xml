@@ -11,7 +11,7 @@
     SELECT * FROM userInfo WHERE username = #{username}
   </select>
   <update id="updateUserInfo" parameterType="com.example.shop.entity.UserInfo">
-    UPDATE userInfo SET name = #{name}, dept = #{dept}, phone = #{phone}, qqNumber = #{qqNumber}, address = #{address} WHERE uid = #{uid}
+    UPDATE userInfo SET dept = #{dept}, phone = #{phone}, qqNumber = #{qqNumber}, address = #{address} WHERE uid = #{uid}
   </update>
   <select id="getUserById" resultType="com.example.shop.entity.UserInfo" parameterType="int">
     SELECT * FROM userInfo WHERE uid = #{uid}

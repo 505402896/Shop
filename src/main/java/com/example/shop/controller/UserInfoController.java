@@ -35,4 +35,9 @@ public class UserInfoController {
   public Result updatePassword(@RequestBody UserInfo userInfo) {
     return userInfoService.updatePassword(userInfo);
   }
+
+  @RequestMapping(value = "/getUserInfo",method = RequestMethod.GET)
+  public Result getUserInfo(int uid) {
+    return userInfoService.getUserInfo(uid);
+  }
 }

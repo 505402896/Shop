@@ -10,4 +10,5 @@ public interface UserInfoService {
   Result sign(UserInfo userInfo);
   Result updateUserInfo(UserInfo userInfo);
   Result updatePassword(UserInfo userInfo);
+  Result getUserInfo(int uid);
 }

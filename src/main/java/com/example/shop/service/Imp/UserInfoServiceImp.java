@@ -68,4 +68,14 @@ public class UserInfoServiceImp implements UserInfoService {
     result.setCode(200);
     return result;
   }
+
+  @Override
+  public Result getUserInfo(int uid) {
+    Result result = new Result();
+    UserInfo userInfo = userInfoMapper.getUserById(uid);
+    result.setCode(200);
+    result.setMessage("查询成功");
+    result.setData(userInfo);
+    return result;
+  }
 }
