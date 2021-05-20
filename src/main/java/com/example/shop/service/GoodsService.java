@@ -13,4 +13,5 @@ public interface GoodsService {
   Result getGoodsByType(int type);
   Result getMyGoods(int uid);
   Result delMyGoods(int gid);
+  Result getGoodsByTitle(String title);
 }

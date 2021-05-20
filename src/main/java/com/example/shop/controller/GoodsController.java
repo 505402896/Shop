@@ -49,4 +49,9 @@ public class GoodsController {
   public Result delMyGoods(@PathVariable("gid") int gid) {
     return goodsService.delMyGoods(gid);
   }
+
+  @RequestMapping(value = "/getGoodsByTitle",method = RequestMethod.GET)
+  public Result getGoodsByTitle(String title) {
+    return goodsService.getGoodsByTitle(title);
+  }
 }

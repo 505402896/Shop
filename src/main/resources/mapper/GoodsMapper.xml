@@ -20,6 +20,9 @@
     DELETE FROM goods WHERE gid = #{gid}
   </delete>
   <select id="queryImgPath" resultType="java.lang.String" parameterType="int">
-        SELECT pic FROM goods WHERE gid = #{gid}
-    </select>
+    SELECT pic FROM goods WHERE gid = #{gid}
+  </select>
+  <select id="getGoodsByTitle" resultType="com.example.shop.entity.Goods" parameterType="String">
+    SELECT * FROM goods WHERE title LIKE "%"#{title}"%"
+  </select>
 </mapper>

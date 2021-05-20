@@ -101,4 +101,14 @@ public class GoodsServiceImp implements GoodsService {
     }
     return result;
   }
+
+  @Override
+  public Result getGoodsByTitle(String title) {
+    Result result = new Result();
+    List<Goods> list = goodsMapper.getGoodsByTitle(title);
+    result.setData(list);
+    result.setMessage("查询成功");
+    result.setTotal(200);
+    return result;
+  }
 }

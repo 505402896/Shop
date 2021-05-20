@@ -16,4 +16,5 @@ public interface GoodsMapper {
   List<Goods> getMyGoods(int uid);
   void delMyGoods(int gid);
   String queryImgPath(int gid);
+  List<Goods> getGoodsByTitle(String title);
 }
